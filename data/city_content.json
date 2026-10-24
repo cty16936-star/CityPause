@@ -3,6 +3,7 @@
     "city_id": "shanghai",
     "geo_name": "Shanghai",
     "name": "上海",
+    "name_en": "Shanghai",
     "country": "China",
     "rhythm_tags": [
       "fast",
@@ -244,6 +245,7 @@
     "city_id": "newyork",
     "geo_name": "New York City",
     "name": "纽约",
+    "name_en": "New York City",
     "country": "United States",
     "rhythm_tags": [
       "fast",
@@ -485,6 +487,7 @@
     "city_id": "london",
     "geo_name": "London",
     "name": "伦敦",
+    "name_en": "London",
     "country": "United Kingdom",
     "rhythm_tags": [
       "fast",
@@ -727,6 +730,7 @@
     "city_id": "paris",
     "geo_name": "Paris",
     "name": "巴黎",
+    "name_en": "Paris",
     "country": "France",
     "rhythm_tags": [
       "dense",
@@ -968,6 +972,7 @@
     "city_id": "singapore",
     "geo_name": "Singapore",
     "name": "新加坡",
+    "name_en": "Singapore",
     "country": "Singapore",
     "rhythm_tags": [
       "fast",
@@ -1209,6 +1214,7 @@
     "city_id": "bangkok",
     "geo_name": "Bangkok",
     "name": "曼谷",
+    "name_en": "Bangkok",
     "country": "Thailand",
     "rhythm_tags": [
       "fast",
@@ -1450,6 +1456,7 @@
     "city_id": "mumbai",
     "geo_name": "Mumbai",
     "name": "孟买",
+    "name_en": "Mumbai",
     "country": "India",
     "rhythm_tags": [
       "fast",
@@ -1691,6 +1698,7 @@
     "city_id": "saopaulo",
     "geo_name": "Sao Paulo",
     "name": "圣保罗",
+    "name_en": "Sao Paulo",
     "country": "Brazil",
     "rhythm_tags": [
       "fast",
@@ -1931,6 +1939,7 @@
     "city_id": "cairo",
     "geo_name": "Cairo",
     "name": "开罗",
+    "name_en": "Cairo",
     "country": "Egypt",
     "rhythm_tags": [
       "dense",
@@ -2171,6 +2180,7 @@
     "city_id": "istanbul",
     "geo_name": "Istanbul",
     "name": "伊斯坦布尔",
+    "name_en": "Istanbul",
     "country": "Turkey",
     "rhythm_tags": [
       "dense",
@@ -2412,6 +2422,7 @@
     "city_id": "moscow",
     "geo_name": "Moscow",
     "name": "莫斯科",
+    "name_en": "Moscow",
     "country": "Russia",
     "rhythm_tags": [
       "fast",
@@ -2653,6 +2664,7 @@
     "city_id": "sydney",
     "geo_name": "Sydney",
     "name": "悉尼",
+    "name_en": "Sydney",
     "country": "Australia",
     "rhythm_tags": [
       "coastal",
@@ -2894,6 +2906,7 @@
     "city_id": "toronto",
     "geo_name": "Toronto",
     "name": "多伦多",
+    "name_en": "Toronto",
     "country": "Canada",
     "rhythm_tags": [
       "dense",
@@ -3135,6 +3148,7 @@
     "city_id": "amsterdam",
     "geo_name": "Amsterdam",
     "name": "阿姆斯特丹",
+    "name_en": "Amsterdam",
     "country": "Netherlands",
     "rhythm_tags": [
       "walkable",
@@ -3376,6 +3390,7 @@
     "city_id": "barcelona",
     "geo_name": "Barcelona",
     "name": "巴塞罗那",
+    "name_en": "Barcelona",
     "country": "Spain",
     "rhythm_tags": [
       "dense",
@@ -3618,6 +3633,7 @@
     "city_id": "berlin",
     "geo_name": "Berlin",
     "name": "柏林",
+    "name_en": "Berlin",
     "country": "Germany",
     "rhythm_tags": [
       "dense",
@@ -3859,6 +3875,7 @@
     "city_id": "losangeles",
     "geo_name": "Los Angeles",
     "name": "洛杉矶",
+    "name_en": "Los Angeles",
     "country": "United States",
     "rhythm_tags": [
       "fast",
