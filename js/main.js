@@ -300,26 +300,41 @@ function updateStoryLanguageNotice() {
     const notice = document.createElement('p');
     notice.className = 'lang-notice';
     notice.textContent = t('content_lang_notice');
-    card.insertBefore(notice, $('story-body'));
+    card.insertBefore(notice, card.querySelector('#story-body, #story-reaction-followup'));
   }
 }
 
 function openStory(node) {
-  activeStoryNode = node;
-  $('story-type').textContent = node.type || '';
-  $('story-title').textContent = node.title;
-  $('story-body').textContent = node.body;
-  updateStoryLanguageNotice();
-  $('story-source').textContent = node.source_note ? `${t('source_prefix')}${node.source_note}` : '';
-  $('story-reaction-question').hidden = false;
-  $('story-reaction-options').hidden = false;
-  $('story-reaction-followup').hidden = true;
-  $('btn-continue-story').hidden = true;
-  const row = $('story-reaction-options');
-  row.innerHTML = '';
-  row.hidden = false;
+  const card = document.querySelector('.story-card');
+  if (!card) {
+    console.error('找不到 .story-card 容器');
+    return;
+  }
 
-  (node.reaction_options || []).forEach(opt => {
+  activeStoryNode = node;
+  card.innerHTML = `
+    <button id="btn-close-story" class="close-btn" type="button" aria-label="关闭故事">×</button>
+    <h2 id="story-title"></h2>
+    <p id="story-body"></p>
+    <p id="story-source" class="story-source"></p>
+    <p id="story-reaction-question" class="story-question"></p>
+    <div id="story-reaction-options" class="emotion-row"></div>
+  `;
+
+  card.querySelector('#btn-close-story').onclick = () => showScreen('screen-explore');
+  card.querySelector('#story-title').textContent = node.title;
+  card.querySelector('#story-body').textContent = node.body;
+  card.querySelector('#story-source').textContent = node.source_note
+    ? `${t('source_prefix')}${node.source_note}`
+    : '';
+  card.querySelector('#story-reaction-question').textContent = t('story_question') || '此刻你会…';
+  updateStoryLanguageNotice();
+  const row = card.querySelector('.emotion-row');
+  const opts = node.reaction_options && node.reaction_options.length
+    ? node.reaction_options
+    : [{ id: 'ok', label: t('continue_explore') || '继续', followup: '' }];
+
+  opts.forEach(opt => {
     const btn = document.createElement('button');
     btn.className = 'emo-btn';
     btn.textContent = opt.label;
@@ -334,11 +349,28 @@ function openStory(node) {
 }
 
 function showNodeFollowup(node, opt) {
-  $('story-reaction-options').hidden = true;
-  $('story-reaction-followup').textContent = opt.followup;
-  $('story-reaction-followup').hidden = false;
-  $('btn-continue-story').hidden = false;
-  $('btn-continue-story').onclick = () => completeNode(node);
+  const card = document.querySelector('.story-card');
+  if (!card) return;
+
+  card.innerHTML = `
+    <button id="btn-close-story" class="close-btn" type="button" aria-label="关闭故事">×</button>
+    <h2 id="story-title"></h2>
+    <p id="story-source" class="story-source"></p>
+    <p id="story-reaction-followup" class="node-followup"></p>
+    <div class="emotion-row">
+      <button class="emo-btn" id="node-back" type="button"></button>
+    </div>
+  `;
+
+  card.querySelector('#btn-close-story').onclick = () => showScreen('screen-explore');
+  card.querySelector('#story-title').textContent = node.title;
+  card.querySelector('#story-source').textContent = node.source_note
+    ? `${t('source_prefix')}${node.source_note}`
+    : '';
+  card.querySelector('#story-reaction-followup').textContent = opt.followup;
+  card.querySelector('#node-back').textContent = t('continue_explore') || '继续探索';
+  card.querySelector('#node-back').onclick = () => completeNode(node);
+  updateStoryLanguageNotice();
 }
 
 function completeNode(node) {

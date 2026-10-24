@@ -217,9 +217,11 @@ h2 { font-size: 20px; font-weight: 400; margin-bottom: 16px; letter-spacing: 2px
     linear-gradient(90deg, transparent 49.6%, #e8dcc8 49.6%, #e8dcc8 50.4%, transparent 50.4%),
     linear-gradient(0deg, transparent 69.6%, #ead8be 69.6%, #ead8be 70.2%, transparent 70.2%);
   opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
 }
-.scene-inner { position: absolute; inset: -20px; transition: transform 1.2s ease-out; }
-.hotspots { position: absolute; inset: 0; }
+.scene-inner { position: absolute; inset: -20px; transition: transform 1.2s ease-out; pointer-events: none; z-index: 1; }
+.hotspots { position: absolute; inset: 0; z-index: 2; }
 
 .hotspot {
   position: absolute; width: 50px; height: 50px;
